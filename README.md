@@ -1,6 +1,6 @@
 # Re-engineering the Purifaaya Water Filter
 
-Our entry for the Re-Engineering Challenge at the Waterloo Engineering Competition (WEC), Fall 2026.
+Our entry for the Re-Engineering Challenge at the Waterloo Engineering Competition (WEC), Fall 2026. We placed 2nd and won prize money.
 
 The challenge was to take an existing product and re-engineer it for a better or new use. We picked the Purifaaya, a household ceramic water filter made by SPOUTS of Water in Uganda. We kept the part that already works well, the SPOUTS ceramic pot, and designed a new housing around it that:
 
@@ -32,11 +32,11 @@ About 1300 mm tall and 460 mm wide at the base, and about 22 kg empty with the f
 
 ## Engineering numbers
 
-**Flow.** Flow through the ceramic follows Darcy's law, `Q = K * A * dh / L`, so a steady water level gives a steady flow. We estimate about 7 L/hr, compared to 4.5 to 5 L/hr for the Purifaaya. The 1.5x gain is an assumption we still need to test.
+**Flow.** Flow through the ceramic follows Darcy's law, `Q = K * A * dh / L`, so a steady water level gives a steady flow. We estimate about 7 L/hr, compared to 4.5 to 5 L/hr for the Purifaaya. That's about 40% more water a day (70 L in 10 hours instead of 50 L). We still need to lab-test this.
 
 **Bone char.** Bone char holds about 2 mg of fluoride per gram. At 70 L a day and 3 mg/L of fluoride, that's 210 mg of fluoride a day, so an 8.4 kg charge lasts about 80 days (about 160 days at 1.5 mg/L).
 
-**Zinc.** The target is about 3.5 mg/L, the same level LifeStraw Family gave in a field trial in Kenya. We sized it for the worst case (a fresh plate, the warmest water and the slowest flow) and checked it against the upper intake limit for a toddler. Water that sits in the plate overnight (about 0.2 L) gets diluted about 100 times in the 20 L tank. The zinc plate is sized to run out at the same time as the bone char, so there's only one refill.
+**Zinc.** The zinc is capped at 3 mg/L, Australia's drinking water guideline for taste. A toddler drinking 1 L gets 3 mg, which is under the 7 mg daily safe upper limit. Zinc-releasing filters have already been tested in Benin, and in Kenya the same type of filter raised zinc intake in young children. Each plate costs about UGX 4,000 and is replaced once a year.
 
 ## Compared to the Purifaaya
 
@@ -45,13 +45,14 @@ About 1300 mm tall and 460 mm wide at the base, and about 22 kg empty with the f
 | Pathogens removed | 99.99% | 99.99% (same ceramic) |
 | Fluoride | Not removed | Below 1.5 mg/L (WHO limit) |
 | Flow | 4.5 to 5 L/hr, drops as the water level falls | About 7 L/hr, steady |
-| Nutrition | None | Optional zinc, about a third of a child's daily needs |
+| Nutrition | None | Optional zinc, about 3 mg/L |
 | Salt | Not removed | Not removed |
 
 ## Maintenance
 
 - Every 14 days: scrub the ceramic pot. This is the same as the Purifaaya, but the steady flow should mean less clogging.
-- About every 3 months: refill the bone char and swap the zinc plate at the same time.
+- About every 80 days: test the fluoride level and refill the bone char at a local refill shop.
+- Once a year: replace the zinc plate at the same shop.
 
 ## Design decisions
 
@@ -67,6 +68,12 @@ About 1300 mm tall and 460 mm wide at the base, and about 22 kg empty with the f
 - **SPOUTS:** our design buys their ceramic pots instead of competing with them.
 - **Local butchers and abattoirs:** new income from turning waste bones into bone char.
 - **The environment:** no fuel needed, and the bone char comes from food waste.
+
+## Documents
+
+- [Presentation](presentation.pdf): the slides we presented to the judges
+- [Research report](research-report.pdf): the full write-up with references
+- [Metrics and cost model](metrics.xlsx): performance numbers and the cost per litre spreadsheet
 
 ## CAD
 
